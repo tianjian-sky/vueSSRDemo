@@ -1,6 +1,7 @@
 <template>
-    <div id="app">
+    <div id="page">
         <h1>Hello, I'm vue ssr!</h1>
+        <subPage/>
     </div>
 </template>
 
@@ -15,8 +16,12 @@ h1 {
 </style>
 
 <script>
+import subPage from './subPage.vue'
 export default {
-    name: 'app',
+    name: 'page',
+    components: {
+        subPage
+    },
     created () {
         console.log('component mounted!')
     }

@@ -13,7 +13,7 @@ var configClient = {
     },
     output: {
         path: path.resolve(__dirname, 'dist/vueSSR'),
-        filename: 'client.[chunkhash].js'
+        filename: 'clientEntry.[chunkhash].js'
     },
     plugins: [
         new HtmlWebpackPlugin({
