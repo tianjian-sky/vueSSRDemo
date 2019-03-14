@@ -1,6 +1,7 @@
 'use strict'
 const path = require('path')
 const vueLoaderPlugin = require('vue-loader/lib/plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -44,5 +45,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new vueLoaderPlugin()]
+  plugins: [new vueLoaderPlugin(), new CleanWebpackPlugin()]
 }
