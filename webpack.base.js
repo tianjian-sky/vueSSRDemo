@@ -2,6 +2,7 @@
 const path = require('path')
 const vueLoaderPlugin = require('vue-loader/lib/plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -29,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        loader: ['style-loader', 'css-loader', 'less-loader']
+        loader: ['vue-style-loader', 'css-loader', 'less-loader']
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

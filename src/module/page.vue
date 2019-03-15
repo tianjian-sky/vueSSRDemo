@@ -6,7 +6,7 @@
 </template>
 
 <style lang="less" scoped>
-#app {
+#page {
     box-shadow: 1px 1px #ccc;
 }
 h1 {

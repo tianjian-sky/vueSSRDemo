@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Page from './module/page.vue'
 import createRouter from './route'
 import createStore from './store'
+import './global.less'
 
 // 导出一个工厂函数，用于创建新的
 // 应用程序、router 和 store 实例
