@@ -14,7 +14,8 @@ var configServer = {
     },
     output: {
         path: path.resolve(__dirname, 'dist/vueSSR'),
-        filename: '[name].[chunkhash].js'
+        filename: '[name].[chunkhash].js',
+        libraryTarget: 'commonjs2'
     },
     node: {
         fs: 'empty',
