@@ -1,7 +1,8 @@
 <template>
     <div id="page">
         <h1>Hello, I'm vue ssr!</h1>
-        <subPage/>
+        <!-- <subPage/> -->
+        <router-view/>
     </div>
 </template>
 
@@ -16,12 +17,9 @@ h1 {
 </style>
 
 <script>
-import subPage from './subPage.vue'
+// import subPage from './subPage.vue'
 export default {
     name: 'page',
-    components: {
-        subPage
-    },
     created () {
         console.log('component mounted!')
     }

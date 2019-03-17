@@ -46,5 +46,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new vueLoaderPlugin(), new CleanWebpackPlugin()]
+  plugins: [new vueLoaderPlugin()/*, new CleanWebpackPlugin()*/]
 }

@@ -2,7 +2,7 @@ var configBase = require('./webpack.base')
 var merge = require('webpack-merge')
 var path = require('path')
 var ssrPlugin = require('vue-ssr-webpack-plugin')
-const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
+var VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
 function resolve (dir) {
     return path.join(__dirname, '..', dir)

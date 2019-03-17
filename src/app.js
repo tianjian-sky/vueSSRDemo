@@ -15,5 +15,5 @@ export function createApp () {
     router,
     store
   })
-  return { app }
+  return { app, router, store }
 }

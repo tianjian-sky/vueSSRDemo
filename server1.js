@@ -1,7 +1,11 @@
 const server = require('express')()
-var path = require('path')
-const renderer = require('vue-server-renderer').createBundleRenderer(path.join(__dirname, './dist/vueSSR/vue-ssr-server-bundle.json'), {
-  template: require('fs').readFileSync('./src/template/index.html', 'utf-8')
+const path = require('path')
+const basedir = path.join(__dirname, './dist/vueSSR/')
+const clientManifest = require('./dist/vueSSR/vue-ssr-client-manifest.json')
+
+const renderer = require('vue-server-renderer').createBundleRenderer(path.join(basedir, './vue-ssr-server-bundle.json'), {
+  template: require('fs').readFileSync('./src/template/index.html', 'utf-8'),
+  clientManifest
 })
 
 server.get('*', (req, res) => {
@@ -12,6 +16,8 @@ server.get('*', (req, res) => {
       res.status(500).end('Internal Server Error')
       return
     }
+    console.log(1, context.state)
+    console.log(2, html)
     res.end(html)
   })
 })
