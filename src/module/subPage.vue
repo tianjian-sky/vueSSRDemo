@@ -1,11 +1,36 @@
 <template>
     <div id="subPage">
-        More please visit: <a :href="$store.state.link">{{$store.state.link}}</a>
+        <div id="box1">
+            More please visit: <a @click="changePage">{{$store.state.link}}</a>
+        </div>
+        <div id="box2" v-if="showDetail">
+            <iframe :src="$store.state.link" noframeborder></iframe>
+
+        </div>
     </div>
 </template>
 
 <style lang="less" scoped>
-
+#subPage{
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    flex-direction:column;
+    #box1{
+        flex: 0;
+        a {
+            color: blue;
+            cursor: pointer;
+        }
+    }
+    #box2 {
+        flex: 1;
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
 </style>
 
 <script>
@@ -17,6 +42,7 @@ export default {
     name: 'subPage',
     data() {
         return {
+            showDetail: false
         }
     },
     created () {
@@ -38,6 +64,9 @@ export default {
         },
         isInNode () {
             return (typeof window === 'undefined')
+        },
+        changePage () {
+            this.showDetail = true
         }
     }
     
