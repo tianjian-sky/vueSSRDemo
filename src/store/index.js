@@ -14,9 +14,14 @@ export default function createStore (Vue) {
         },
         actions: {
             fetchData (context) {
-                apis.getLink()
-                .then(link => {
-                    context.commit('setLink', link)
+                return new Promise((resolve, reject) => {
+                    apis.getLink()
+                    .then(link => {
+                        context.commit('setLink', link)
+                        console.log('a')
+                        resolve()
+                    })
+                    .catch(reject)
                 })
             }
         },

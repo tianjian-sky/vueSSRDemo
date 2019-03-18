@@ -1,4 +1,7 @@
-const server = require('express')()
+const express = require('express')
+const server = express()
+server.use(express.static('dist/vueSSR', {}))
+
 const path = require('path')
 const basedir = path.join(__dirname, './dist/vueSSR/')
 const clientManifest = require('./dist/vueSSR/vue-ssr-client-manifest.json')
@@ -17,7 +20,6 @@ server.get('*', (req, res) => {
       return
     }
     console.log(1, context.state)
-    console.log(2, html)
     res.end(html)
   })
 })

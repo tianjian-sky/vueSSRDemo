@@ -1,10 +1,10 @@
 {
   "publicPath": "",
   "all": [
-    "clientEntry.e3909501983dbf521f5c.js"
+    "clientEntry.ba9b11417c0148ef6e5b.js"
   ],
   "initial": [
-    "clientEntry.e3909501983dbf521f5c.js"
+    "clientEntry.ba9b11417c0148ef6e5b.js"
   ],
   "async": [],
   "modules": {
