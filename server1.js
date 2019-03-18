@@ -1,7 +1,10 @@
 const server = require('express')()
-const renderer = require('vue-server-renderer').createRenderer()
 const path = require('path')
-const createApp = require(path.join(__dirname, './dist/vueSSR/serverEntry.2a511521d70a884c59fa')).default
+const renderer = require('vue-server-renderer').createRenderer({
+    template: require('fs').readFileSync(path.join(__dirname, './src/template/index.html'), 'utf-8')
+})
+
+const createApp = require(path.join(__dirname, './dist/vueSSR/serverEntry.1245ffa10e859f5b6fde')).default
 
 server.get('*', (req, res) => {
   console.log(2, createApp)
@@ -11,13 +14,7 @@ server.get('*', (req, res) => {
       res.status(500).end('Internal Server Error')
       return
     }
-    res.end(`
-      <!DOCTYPE html>
-      <html lang="en">
-        <head><title>Hello</title></head>
-        <body>${html}</body>
-      </html>
-    `)
+    res.end(html)
   })
 })
 
