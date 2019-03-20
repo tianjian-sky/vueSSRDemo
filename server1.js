@@ -19,7 +19,6 @@ server.get('*', (req, res) => {
       res.status(500).end('Internal Server Error')
       return
     }
-    console.log(1, context.state)
     res.end(html)
   })
 })

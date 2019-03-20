@@ -1,5 +1,5 @@
 <template>
-    <div id="page">
+    <div id="app">
         <h1>Hello, I'm vue ssr!</h1>
         <!-- <subPage/> -->
         <router-view/>
